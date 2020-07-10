@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qz.dao.merMapper">
+    <insert id="addMer" parameterType="Merchant">
+        insert into qiuzhi.merchant(mname)
+        values (#{mname});
+    </insert>
+    <delete id="delMerById" parameterType="int">
+        delete from qiuzhi.merchant where mid = #{mid}
+    </delete>
+    <update id="updateMer" parameterType="Merchant">
+        update qiuzhi.merchant
+        set mname=#{mname}
+        where mid=#{mid};
+    </update>
+    <select id="queryMerById" resultType="Merchant">
+        select * from qiuzhi.merchant
+        where mid=#{mid}
+    </select>
+    <select id="queryAllMer" resultType="Merchant">
+        select * from qiuzhi.merchant
+    </select>
+</mapper>
