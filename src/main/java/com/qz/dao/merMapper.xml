@@ -4,22 +4,22 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.qz.dao.merMapper">
     <insert id="addMer" parameterType="Merchant">
-        insert into qiuzhi.merchant(mname)
+        insert into cityTownWeb.merchant(mname)
         values (#{mname});
     </insert>
     <delete id="delMerById" parameterType="int">
-        delete from qiuzhi.merchant where mid = #{mid}
+        delete from cityTownWeb.merchant where mid = #{mid}
     </delete>
     <update id="updateMer" parameterType="Merchant">
-        update qiuzhi.merchant
+        update cityTownWeb.merchant
         set mname=#{mname}
         where mid=#{mid};
     </update>
     <select id="queryMerById" resultType="Merchant">
-        select * from qiuzhi.merchant
+        select * from cityTownWeb.merchant
         where mid=#{mid}
     </select>
     <select id="queryAllMer" resultType="Merchant">
-        select * from qiuzhi.merchant
+        select * from cityTownWeb.merchant
     </select>
 </mapper>
