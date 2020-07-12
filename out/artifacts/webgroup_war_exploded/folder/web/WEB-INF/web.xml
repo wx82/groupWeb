@@ -39,4 +39,23 @@
     <session-config>
         <session-timeout>15</session-timeout>
     </session-config>
+
+    <!-- 配置DispatcherServlet -->
+    <servlet>
+        <servlet-name>SpringMVC</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!-- 配置springMVC需要加载的配置文件-->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:applicationContext.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+        <async-supported>true</async-supported>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SpringMVC</servlet-name>
+        <!-- 匹配所有请求，此处也可以配置成 / 形式 -->
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+
 </web-app>

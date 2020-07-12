@@ -6,4 +6,7 @@
     <import resource="spring-dao.xml"/>
     <import resource="spring-mvc.xml"/>
     <import resource="spring-service.xml"/>
+    <!--    使web.xml可以扫描到spring-websocket.xml
+            *为精确匹配 不能匹配通配符 注意克隆后resources是否加入classpath-->
+    <import resource="classpath*:/spring-websocket.xml"/>
 </beans>
