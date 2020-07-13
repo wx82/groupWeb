@@ -1,32 +1,31 @@
 package com.qz.controller;
 
-import com.qz.pojo.Merchant;
-import com.qz.service.MerService;
-import com.qz.service.MerServiceImp;
+import com.qz.pojo.User;
+import com.qz.service.UserService;
+import com.qz.service.UserServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
 @Controller
-@RequestMapping("/merchant")
+@RequestMapping("/user")
 
-public class merController {
+public class userController {
     //controller层调用service层
     @Autowired
     //括号中填写-service中的beanID
-    @Qualifier("MerServiceImp")
-    private MerService merService = new MerServiceImp();
+    @Qualifier("UserServiceImp")
+    private UserService userService = new UserServiceImp();
     //查询商家展示
-    @RequestMapping("/allmer")
+    @RequestMapping("/alluser")
     public String list(Model model){
-        List<Merchant> list = merService.queryAllMer();
+        List<User> list = userService.queryAllUser();
         model.addAttribute("list",list);
-        return "allmer";
+        return "alluser";
     }
 }
 

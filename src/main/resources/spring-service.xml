@@ -14,6 +14,10 @@
     <bean id="MerServiceImp" class="com.qz.service.MerServiceImp">
         <property name="mermapper" ref="merMapper"/>
     </bean>
+    <!--UserServiceImpl注入到IOC容器中-->
+    <bean id="UserServiceImp" class="com.qz.service.UserServiceImp">
+        <property name="usermapper" ref="userMapper"/>
+    </bean>
 
     <!-- 配置事务管理器 -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

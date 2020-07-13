@@ -8,6 +8,6 @@
     </typeAliases>
     <mappers>
         <mapper class="com.qz.dao.merMapper"/>
-
+        <mapper class="com.qz.dao.userMapper"/>
     </mappers>
 </configuration>

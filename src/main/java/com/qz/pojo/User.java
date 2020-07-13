@@ -11,5 +11,5 @@ public class User {
     private int uid;
     private String uname;
     private String usex;
-    private int unumber;
+//    private int unumber;
 }
